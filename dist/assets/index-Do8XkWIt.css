@@ -1,0 +1,1 @@
+[class*=col-mb-]{margin-bottom:calc(var(--col-mb) / -1)}[class*=col-mb-]>.col,[class*=col-mb-]>[class*=col-]{padding-bottom:var(--col-mb)}.col-mb-10{--col-mb: 10px}.col-mb-20{--col-mb: 20px}.col-mb-30{--col-mb: 30px}.col-mb-50{--col-mb: 50px}.col-mb-80{--col-mb: 80px}
