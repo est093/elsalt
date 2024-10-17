@@ -1,0 +1,343 @@
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const NavComponent = () => {
+  const [logoMatches, setLogoMatches] = useState(
+    window.matchMedia("(max-width: 992px)").matches
+  );
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 992px)").matches
+  );
+  const [matches2, setMatches2] = useState(
+    window.matchMedia("(min-width: 557px)").matches
+  );
+  const [matches3, setMatches3] = useState(
+    window.matchMedia("(max-width: 440px)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 992px)") //571px
+      .addEventListener("change", (e) => setLogoMatches(e.matches));
+    window
+      .matchMedia("(min-width: 992px)") //571px
+      .addEventListener("change", (e) => setMatches(e.matches));
+    window
+      .matchMedia("(min-width: 557px)")
+      .addEventListener("change", (e) => setMatches2(e.matches));
+    window
+      .matchMedia("(max-width: 440px)")
+      .addEventListener("change", (e) => setMatches3(e.matches));
+  }, []);
+
+  let location = useLocation();
+  const path = location;
+  const [toggled, setToggled] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const getToggleMenu = () => {
+    if (!isAdmin) {
+    } else {
+      return (
+        <div className="header-misc">
+          <div className="dropdown mx-3 me-lg-0">
+            <a
+              href="#"
+              className={
+                toggled
+                  ? "btn btn-secondary btn-sm dropdown-toggle show"
+                  : "btn btn-secondary btn-sm dropdown-toggle"
+              }
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded={toggled ? "false" : "true"}
+              onClick={() => setToggled(!toggled)}
+            >
+              <i className="icon-user"></i>
+            </a>
+            <ul
+              className={
+                toggled
+                  ? "dropdown-menu dropdown-menu-end show"
+                  : "dropdown-menu dropdown-menu-end"
+              }
+              aria-labelledby="dropdownMenu1"
+              style={
+                toggled
+                  ? {
+                      position: "absolute",
+                      margin: "0px",
+                      transform: "translate3d(0.8px, 33.6px, 0px)",
+                    }
+                  : {}
+              }
+            >
+              <a className="dropdown-item text-start" href="/elsalt/profile">
+                Profile
+              </a>
+              {isAdmin && (
+                <>
+                  <div className="dropdown-divider"></div>
+                  <a className="dropdown-item text-start" href="/elsalt/admin">
+                    관리자 승인 화면
+                  </a>
+                </>
+              )}
+              <div className="dropdown-divider"></div>
+              <a
+                className="dropdown-item text-start"
+                onClick={() => handleLogout()}
+                style={{ cursor: "pointer" }}
+              >
+                Logout <i className="icon-signout"></i>
+              </a>
+            </ul>
+          </div>
+        </div>
+      );
+    }
+  };
+  return (
+    <div id="wrapper" className="clearfix">
+      <header
+        id="header"
+        className={
+          path === "/" ? "transparent-header dark" : "transparent-header"
+        }
+        style={matches ? { position: "absolute" } : {}}
+      >
+        <div
+          id="header-wrap"
+          style={
+            matches
+              ? {
+                  backgroundColor: "rgba(255,255,255,0.5)",
+                }
+              : {}
+          }
+        >
+          <div className="container">
+            <div className="header-row">
+              <div id="logo">
+                <a href="/elsalt/" className="standard-logo">
+                  {!logoMatches ? (
+                    <img
+                      src="/elsalt/logo.jpg"
+                      alt="logo"
+                      style={{
+                        marginTop: "-10px",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src="/elsalt/logo.jpg"
+                      alt="logo"
+                      style={{
+                        marginTop: "-10px",
+                      }}
+                    />
+                  )}
+                </a>
+              </div>
+              {matches3 ? <></> : getToggleMenu()}
+              <div id="primary-menu-trigger">
+                <svg className="svg-trigger" viewBox="0 0 100 100">
+                  <path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
+                  <path d="m 30,50 h 40"></path>
+                  <path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
+                </svg>
+              </div>
+
+              <nav className="primary-menu">
+                <ul className="menu-container">
+                  <li className="menu-item">
+                    <a className="menu-link" href="#">
+                      <div>빛과소금내과 소개</div>
+                    </a>
+                    <ul className="sub-menu-container">
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/intro">
+                          <div>인사말</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/hi">
+                          <div>HI</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/merit">
+                          <div>빛과소금내과 장점</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>언론보도자료</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/way">
+                          <div>오시는 길</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice2">
+                          <div>공지사항</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li className="menu-item">
+                    <a className="menu-link" href="#">
+                      <div>진료안내</div>
+                    </a>
+                    <ul className="sub-menu-container">
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/activity">
+                          <div>진료시간</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>증명원</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>시설안내 및 검사정보</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>관련 사이트</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li className="menu-item">
+                    <a className="menu-link" href="#">
+                      <div>종합건강검진센터</div>
+                    </a>
+                    <ul className="sub-menu-container">
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/news">
+                          <div>일반종합검진</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>국민건강보험공단종합검진</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>일반건강검진 종류 및 진단서</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>빛과소금내과 종합검진장점</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/calendar">
+                          <div>시설안내 및 검사정보</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li className="menu-item">
+                    <a className="menu-link" href="#">
+                      <div>류마티스전문클리닉</div>
+                    </a>
+                    <ul className="sub-menu-container">
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>류마티스란?</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>류마티스 자가진단법</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>류마티스질병분류</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>질병정보</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>의학컬럼</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>관절염극복방법</div>
+                        </a>
+                      </li>
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>자료실</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li className="menu-item">
+                    <a className="menu-link" href="#">
+                      <div>온라인상담</div>
+                    </a>
+                    <ul className="sub-menu-container">
+                      <li className="menu-item">
+                        <a className="menu-link" href="/elsalt/notice">
+                          <div>온라인상담</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  {/* {matches3 && getSmallViewLoginMenu()} */}
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div className="header-wrap-clone"></div>
+      </header>
+      <style>{`
+        .elsalt-span {
+          font-family: arita-dotum-md;
+          font-size: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+        }
+        .elsalt-span-2 {
+          font-family: arita-dotum-md;
+          font-weight: 600;
+          font-size: 28px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 3px;
+        }
+
+        @media screen and (max-width: 320px) {
+          .txt-span-header-invisible {
+            display: none;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default NavComponent;
