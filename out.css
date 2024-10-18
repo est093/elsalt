@@ -17382,7 +17382,7 @@ input[type="checkbox"]:not(:checked) + label.error {
   max-width: none !important;
 }
 .heading-block {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .heading-block h1,
