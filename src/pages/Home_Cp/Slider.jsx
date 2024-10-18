@@ -6,10 +6,13 @@ const SliderComponent = () => {
   );
 
   const [matches2, setMatches2] = useState(
-    window.matchMedia("(min-width: 650px)").matches
+    window.matchMedia("(max-width: 1000px)").matches
   );
   const [matches3, setMatches3] = useState(
     window.matchMedia("(min-width: 990px)").matches
+  );
+  const [matches4, setMatches4] = useState(
+    window.matchMedia("(min-width: 840px)").matches
   );
 
   useEffect(() => {
@@ -17,11 +20,14 @@ const SliderComponent = () => {
       .matchMedia("(min-width: 571px)") //571px
       .addEventListener("change", (e) => setMatches(e.matches));
     window
-      .matchMedia("(min-width: 650px)")
+      .matchMedia("(max-width: 1000px)")
       .addEventListener("change", (e) => setMatches2(e.matches));
     window
       .matchMedia("(min-width: 990px)")
       .addEventListener("change", (e) => setMatches3(e.matches));
+    window
+      .matchMedia("(min-width: 840px)")
+      .addEventListener("change", (e) => setMatches4(e.matches));
   }, []);
   return (
     <section className="home-hero-section wf-section">
@@ -54,78 +60,23 @@ const SliderComponent = () => {
               </div>
             </div>
           </div>
-          <div
-            className="hero-slide w-slide"
-            style={
-              matches2
-                ? {
-                    backgroundColor: "rgba(19, 116, 185, 0.8)",
-                  }
-                : {
-                    backgroundColor: "rgba(19, 116, 185, 0.8)",
-
-                    height: "270px",
-                  }
-            }
-            // style = {matches2 ?
-            //   ( matches_2? {
-            //   backgroundColor: "rgba(19, 116, 185)", color:"white" paddingTop: '15%',
-            // }:
-            // ({
-            //   backgroundColor: "rgba(19, 116, 185)", color:"white" paddingTop: '15%',
-            // }: {
-            //   backgroundColor: "rgba(19, 116, 185)", color:"white" height: "300px"
-            // })
-          >
-            <div className="main-container w-container">
-              <div
-                className="hero-slider-wrapper"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  style={{
-                    color: "rgba(255, 255, 255, 1)",
-                    fontWeight: "bold",
-                    padding: "10px",
-                    lineHeight: "30px",
-                    textAlign: "center",
-                    fontFamily: "arita-dotum-md",
-                  }}
-                  className="page-title font-color-white"
-                >
-                  너희는 세상의 소금이니 소금이 만일 그 맛을 잃으면 무엇으로
-                  짜게 하리요
-                  {matches ? <br /> : " "}후에는 아무 쓸 데 없어 다만 밖에
-                  버려져 사람에게 밟힐 뿐이니라
-                  {matches ? <br /> : " "}너희는 세상의 빛이라 산 위에 있는
-                  동네가 숨겨지지 못할 것이요
-                  {matches ? <br /> : " "}사람이 등불을 켜서 말 아래에 두지
-                  아니하고 등경 위에 두나니
-                  {matches ? <br /> : " "}이러므로 집 안 모든 사람에게
-                  비치느니라
-                  {matches ? <br /> : " "}이같이 너희 빛이 사람 앞에 비치게 하여
-                  그들로 너희 착한 행실을 보고
-                  {matches ? <br /> : " "}하늘에 계신 너희 아버지께 영광을
-                  돌리게 하라
-                  <br />
-                  마태복음 5:13-16
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div className="hero-slide w-slide">
             <img
               src="/elsalt/elsalt/main_banner2.jpg"
               loading="lazy"
               alt="Slider image"
-              width={matches3 ? "" : "100%"}
-              className={matches3 ? "slider-image" : ""}
+              // height={matches3 ? "" : "130%"}
+              className={matches3 ? "slider-image" : "slider-image-sm"}
+            />
+          </div>
+          <div className="hero-slide w-slide">
+            <img
+              src={matches3 ? "/elsalt/elsalt/2.jpg" : "/elsalt/elsalt/1.jpg"}
+              loading="lazy"
+              alt="Slider image"
+              // height={matches3 ? "" : "130%"}
+              className={matches3 ? "slider-image" : "slider-image-sm"}
             />
           </div>
         </div>
@@ -265,6 +216,24 @@ const SliderComponent = () => {
             font-size: 10px !important;
             line-height: 20px !important;
           }
+        }
+        @media only screen and (min-width: 1000px)   {
+          .page-title {
+            font-size: 23px !important;
+            line-height: 30px !important;
+          }
+        }
+        @media only screen and (min-width: 1600px)   {
+          .page-title {
+            font-size: 30px !important;
+            line-height: 40px !important;
+          }
+        }
+        .fix-text-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content:center;
+          gap:10px;
         }
       `}</style>
     </section>

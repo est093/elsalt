@@ -11016,9 +11016,15 @@ figcaption {
 
 .hero-slider {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
 }
 
+@media screen and (min-width: 992px) {
+  .hero-slider {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
 .hero-slider-mask {
   width: 100%;
   height: 100%;
@@ -11143,6 +11149,13 @@ figcaption {
   right: 0%;
   bottom: 0%;
   z-index: -1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.slider-image-sm {
+  
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
