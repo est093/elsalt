@@ -1,14 +1,22 @@
 {
-  "1": {
-    "id": 1,
-    "content": "",
-    "title": "",
-    "date": ""
-  },
-  "2": {
-    "id": 2,
-    "content": "",
-    "title": "",
-    "date": ""
-  }
+  "posts": [
+    {
+      "id": 1,
+      "content": "hello",
+      "title": "hello title",
+      "date": "2024-10-30"
+    },
+    {
+      "id": 2,
+      "content": "hello2",
+      "title": "hello2 title",
+      "date": "2024-10-30"
+    },
+    {
+      "id": 3,
+      "content": "3",
+      "title": "3 title",
+      "date": "2024-10-30"
+    }
+  ]
 }

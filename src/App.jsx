@@ -7,6 +7,7 @@ import Hi from "./pages/Tabs/1/Hi";
 import Merit from "./pages/Tabs/1/Merit";
 import FixTabLayout from "./pages/Tabs/FixTabLayout";
 import Notice from "./pages/Tabs/1/Notice";
+import Item from "./pages/Tabs/1/Notice/Item";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route exact path="/hi" element={<Hi />} />
               <Route exact path="/merit" element={<Merit />} />
               <Route exact path="/notice" element={<Notice />} />
+              <Route exact path="/notice/:id" element={<Item />} />
             </Route>
           </Route>
         </Routes>

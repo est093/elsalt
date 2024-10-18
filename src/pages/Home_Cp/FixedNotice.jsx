@@ -13,8 +13,7 @@ export default function FixedNotice() {
   const [matches4, setMatches4] = useState(
     window.matchMedia("(max-width: 285px)").matches
   );
-
-  const linkbox = (text1, text2) => {
+  const linkbox2 = () => {
     return (
       <div
         className="linkbox"
@@ -28,39 +27,63 @@ export default function FixedNotice() {
             : { width: "60%" }
         }
       >
-        {/* <img
-                    src="/elsalt/elsalt/led_banner.jpg"
-                    alt=""
-                    width={
-                      matches4
-                        ? "100%"
-                        : matches2
-                        ? "80%"
-                        : matches
-                        ? "100%"
-                        : "60%"
-                    }
-                  /> */}
+        <div>
+          <span className="bluetext">
+            국민건강보험공단
+            <br />
+            공식 지정 종합 검진센터
+          </span>
+          <br />
+          <span>✔ 직장(개인/단체) 건강검진</span>
+          <br />
+          <span>✔ 지역 건강검진</span>
+          <br />
+          <span>✔ 유·청소년 건강검진</span>
+          <br />
+          <span>✔ 여성 건강검진</span>
+          <br />
+          <span>✔ 채용신체검사</span>
+        </div>
+      </div>
+    );
+  };
+
+  const linkbox = (text1, text2, islink2 = false) => {
+    return (
+      <div
+        className="linkbox"
+        style={
+          matches4
+            ? { width: "100%" }
+            : matches2
+            ? { width: "80%" }
+            : matches
+            ? { width: "100%" }
+            : { width: "60%" }
+        }
+      >
         <div>
           <span className="bluetext">{text1}</span>
           <br />
           <span>{text2}</span>
         </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-arrow-right-circle"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
-            />
-          </svg>
-        </div>
+        {!islink2 && (
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-arrow-right-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+              />
+            </svg>
+          </div>
+        )}
       </div>
     );
   };
@@ -158,37 +181,13 @@ export default function FixedNotice() {
                 {linkbox("류마티스전문 클리닉", "Rheumatis-clinic")}
                 {linkbox("공지사항 바로가기", "What's News")}
               </div>
-              <div className="col-lg-3">
-                <p>
-                  <img
-                    src="/elsalt/elsalt/main_aside_banner1.jpg"
-                    alt=""
-                    width={
-                      matches4
-                        ? "100%"
-                        : matches2
-                        ? "80%"
-                        : matches
-                        ? "100%"
-                        : "60%"
-                    }
-                  />
-                </p>
-                <p>
-                  <img
-                    src="/elsalt/elsalt/aside_banner1.jpg"
-                    alt=""
-                    width={
-                      matches4
-                        ? "100%"
-                        : matches2
-                        ? "80%"
-                        : matches
-                        ? "100%"
-                        : "60%"
-                    }
-                  />
-                </p>
+              <div className="col-lg-3 linkcontainer">
+                {linkbox(
+                  "➡️ 검진종목 바로가기",
+                  "정확한 진단과 밑고 신뢰할 수 있는 전문 의료진과 최신의료기기에 의해 귀하의 건강상태를 체크합니다.",
+                  true
+                )}
+                {linkbox2()}
               </div>
               <div className="col-lg-3">
                 <div
@@ -247,7 +246,7 @@ export default function FixedNotice() {
                       backgroundColor: "#1374b9",
                     }}
                   >
-                    진료실
+                    진료{matches3 && matches ? <br /> : ""}실
                   </button>
                 </p>
                 <p>
