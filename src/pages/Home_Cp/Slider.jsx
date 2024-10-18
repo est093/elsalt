@@ -126,11 +126,6 @@ const SliderComponent = () => {
         .h1:not(:first-child) {
           margin-top: -20px;
         }
-        .page-title,
-        .first-slider-text,
-        .upper {
-          font-size: 20px !important;
-        }
         @media screen and (min-width: 664px) {
           .h1 {
             line-height: 70px;
@@ -143,11 +138,6 @@ const SliderComponent = () => {
           }
           .h1:not(:first-child) {
             margin-top: -10px;
-          }
-          .page-title,
-          .first-slider-text,
-          .upper {
-            font-size: 15px !important;
           }
         }
         @media screen and (max-width: 370px) {
@@ -162,10 +152,6 @@ const SliderComponent = () => {
           }
           .h1:not(:first-child) {
             margin-top: 0px;
-          }
-          .first-slider-text,
-          .upper {
-            font-size: 15px !important;
           }
         }
         br {
@@ -203,37 +189,9 @@ const SliderComponent = () => {
           .hero-slider-mask {
             height: 70%;
           }
-          .page-title {
-            font-size: 12px !important;
-            line-height: 24px !important;
-          }
           .main-container {
             padding: 5px;
           }
-        }
-        @media only screen and (max-width: 255px)   {
-          .page-title {
-            font-size: 10px !important;
-            line-height: 20px !important;
-          }
-        }
-        @media only screen and (min-width: 1000px)   {
-          .page-title {
-            font-size: 23px !important;
-            line-height: 30px !important;
-          }
-        }
-        @media only screen and (min-width: 1600px)   {
-          .page-title {
-            font-size: 30px !important;
-            line-height: 40px !important;
-          }
-        }
-        .fix-text-wrapper {
-          display: flex;
-          flex-direction: column;
-          justify-content:center;
-          gap:10px;
         }
       `}</style>
     </section>
