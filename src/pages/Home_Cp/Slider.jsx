@@ -66,7 +66,6 @@ const SliderComponent = () => {
               src="/elsalt/elsalt/main_banner2.jpg"
               loading="lazy"
               alt="Slider image"
-              // height={matches3 ? "" : "130%"}
               className={matches3 ? "slider-image" : "slider-image-sm"}
             />
           </div>
@@ -75,7 +74,6 @@ const SliderComponent = () => {
               src={matches3 ? "/elsalt/elsalt/2.jpg" : "/elsalt/elsalt/1.jpg"}
               loading="lazy"
               alt="Slider image"
-              // height={matches3 ? "" : "130%"}
               className={matches3 ? "slider-image" : "slider-image-sm"}
             />
           </div>
