@@ -6,12 +6,12 @@ export default function FixTabLayout() {
   let location = useLocation();
   let name = path[location.pathname];
   const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 375px)").matches
+    window.matchMedia("(max-width: 544px)").matches
   );
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 375px)") //571px
+      .matchMedia("(max-width: 544px)") //571px
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
   return (

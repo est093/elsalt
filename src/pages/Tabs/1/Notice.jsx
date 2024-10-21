@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/fixednotice.css";
+import "../../../css/fixcss.css";
 export default function Notice() {
   return (
     <div className="notice_wrap">

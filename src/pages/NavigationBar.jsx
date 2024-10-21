@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const NavComponent = () => {
-  const [logoMatches, setLogoMatches] = useState(
-    window.matchMedia("(max-width: 992px)").matches
-  );
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 992px)").matches
   );
@@ -15,9 +12,6 @@ const NavComponent = () => {
     window.matchMedia("(max-width: 440px)").matches
   );
   useEffect(() => {
-    window
-      .matchMedia("(max-width: 992px)") //571px
-      .addEventListener("change", (e) => setLogoMatches(e.matches));
     window
       .matchMedia("(min-width: 992px)") //571px
       .addEventListener("change", (e) => setMatches(e.matches));
@@ -32,77 +26,12 @@ const NavComponent = () => {
   let location = useLocation();
   const path = location;
   const [toggled, setToggled] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
 
-  const getToggleMenu = () => {
-    if (!isAdmin) {
-    } else {
-      return (
-        <div className="header-misc">
-          <div className="dropdown mx-3 me-lg-0">
-            <a
-              href="#"
-              className={
-                toggled
-                  ? "btn btn-secondary btn-sm dropdown-toggle show"
-                  : "btn btn-secondary btn-sm dropdown-toggle"
-              }
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded={toggled ? "false" : "true"}
-              onClick={() => setToggled(!toggled)}
-            >
-              <i className="icon-user"></i>
-            </a>
-            <ul
-              className={
-                toggled
-                  ? "dropdown-menu dropdown-menu-end show"
-                  : "dropdown-menu dropdown-menu-end"
-              }
-              aria-labelledby="dropdownMenu1"
-              style={
-                toggled
-                  ? {
-                      position: "absolute",
-                      margin: "0px",
-                      transform: "translate3d(0.8px, 33.6px, 0px)",
-                    }
-                  : {}
-              }
-            >
-              <a className="dropdown-item text-start" href="/elsalt/profile">
-                Profile
-              </a>
-              {isAdmin && (
-                <>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item text-start" href="/elsalt/admin">
-                    관리자 승인 화면
-                  </a>
-                </>
-              )}
-              <div className="dropdown-divider"></div>
-              <a
-                className="dropdown-item text-start"
-                onClick={() => handleLogout()}
-                style={{ cursor: "pointer" }}
-              >
-                Logout <i className="icon-signout"></i>
-              </a>
-            </ul>
-          </div>
-        </div>
-      );
-    }
-  };
   return (
     <div id="wrapper" className="clearfix">
       <header
         id="header"
-        className={
-          path === "/" ? "transparent-header dark" : "transparent-header"
-        }
+        className="transparent-header"
         style={matches ? { position: "absolute" } : {}}
       >
         <div
@@ -119,26 +48,15 @@ const NavComponent = () => {
             <div className="header-row">
               <div id="logo">
                 <a href="/elsalt/" className="standard-logo">
-                  {!logoMatches ? (
-                    <img
-                      src="/elsalt/logo.jpg"
-                      alt="logo"
-                      style={{
-                        marginTop: "-10px",
-                      }}
-                    />
-                  ) : (
-                    <img
-                      src="/elsalt/logo.jpg"
-                      alt="logo"
-                      style={{
-                        marginTop: "-10px",
-                      }}
-                    />
-                  )}
+                  <img
+                    src="/elsalt/logo.jpg"
+                    alt="logo"
+                    style={{
+                      marginTop: "-10px",
+                    }}
+                  />
                 </a>
               </div>
-              {matches3 ? <></> : getToggleMenu()}
               <div id="primary-menu-trigger">
                 <svg className="svg-trigger" viewBox="0 0 100 100">
                   <path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
@@ -311,31 +229,6 @@ const NavComponent = () => {
         </div>
         <div className="header-wrap-clone"></div>
       </header>
-      <style>{`
-        .elsalt-span {
-          font-family: arita-dotum-md;
-          font-size: 35px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-weight: 600;
-        }
-        .elsalt-span-2 {
-          font-family: arita-dotum-md;
-          font-weight: 600;
-          font-size: 28px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-left: 3px;
-        }
-
-        @media screen and (max-width: 320px) {
-          .txt-span-header-invisible {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 };

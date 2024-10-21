@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/fixednotice.css";
+import "../../css/fixcss.css";
 export default function FixedNotice() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 992px)").matches
@@ -13,6 +13,21 @@ export default function FixedNotice() {
   const [matches4, setMatches4] = useState(
     window.matchMedia("(max-width: 285px)").matches
   );
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 992px)") //571px
+      .addEventListener("change", (e) => setMatches(e.matches));
+
+    window
+      .matchMedia("(max-width: 768px)") //571px
+      .addEventListener("change", (e) => setMatches2(e.matches));
+    window
+      .matchMedia("(max-width: 1200px)") //571px
+      .addEventListener("change", (e) => setMatches3(e.matches));
+    window
+      .matchMedia("(max-width: 285px)") //571px
+      .addEventListener("change", (e) => setMatches4(e.matches));
+  }, []);
   const linkbox2 = () => {
     return (
       <div
@@ -88,21 +103,6 @@ export default function FixedNotice() {
     );
   };
 
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 992px)") //571px
-      .addEventListener("change", (e) => setMatches(e.matches));
-
-    window
-      .matchMedia("(max-width: 768px)") //571px
-      .addEventListener("change", (e) => setMatches2(e.matches));
-    window
-      .matchMedia("(max-width: 1200px)") //571px
-      .addEventListener("change", (e) => setMatches3(e.matches));
-    window
-      .matchMedia("(max-width: 285px)") //571px
-      .addEventListener("change", (e) => setMatches4(e.matches));
-  }, []);
   return (
     <section id="content" style={{ padding: "0px 0px 0px 10px" }}>
       <div className="content-wrap">
@@ -116,12 +116,12 @@ export default function FixedNotice() {
                   Light & Salt Internal Medicine
                 </h1>
               </div>
-              {/* <p className="lead">
-                  ATPH선교회 웹사이트에 방문하신 것을 환영합니다.
-                </p> */}
             </div>
           </div>
-          <div className="my-0" style={{ textAlign: "center" }}>
+          <div
+            className="my-0"
+            style={{ textAlign: "center", boxSizing: "border-box" }}
+          >
             <div className="row mt-4 col-mb-50">
               <div
                 className="col-lg-3"
@@ -200,24 +200,7 @@ export default function FixedNotice() {
                     <span style={{ fontSize: "10px" }}>Media Light & Salt</span>
                   </h4>
                 </div>
-                <p
-                  style={
-                    matches4
-                      ? {
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "10px",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }
-                      : {
-                          display: "flex",
-                          flexDirection: "row",
-                          gap: "10px",
-                          justifyContent: "center",
-                        }
-                  }
-                >
+                <p className="media-button-container">
                   <button
                     style={{
                       padding: "3px 10px 3px 10px",
@@ -274,7 +257,17 @@ export default function FixedNotice() {
           display:flex;
           align-items: center;
           flex-direction:column;
-          gap: 10px;
+        }
+        .linkcontainer {
+            padding: 10px 0;
+        }
+
+        .linkcontainer > * {
+            margin-bottom: 10px;
+        }
+
+        .linkcontainer > *:last-child {
+            margin-bottom: 0;
         }
         .linkbox {
           display:flex;
@@ -290,6 +283,23 @@ export default function FixedNotice() {
           font-size: 1.1rem;
 
         }
+        .media-button-container {
+          display:flex;
+          align-items: center;
+          flex-direction:row !important;
+          gap: 10px !important;
+          justify-content: center !important;
+
+        }
+        @media screen and (max-width: 992px) {
+          .media-button-container  {
+          
+            display:flex;
+            align-items: center;
+            flex-direction:column !important;
+            gap: 10px !important;
+          }
+      }
       `}</style>
     </section>
   );

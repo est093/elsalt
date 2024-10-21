@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-
+import "../../../css/fixcss.css";
 export default function Intro() {
   return (
     <>
@@ -110,7 +109,7 @@ export default function Intro() {
         <h5>
           <span className="bluebg">협력 병원</span>
         </h5>
-        <ul style={{ padding: "5px 0px 0px 4px" }}>
+        <ul className="intro_list" style={{ padding: "5px 0px 0px 4px" }}>
           <li>서울대학교병원 내과 자문의 및 협력병원 내과 전문의</li>
           <li>일산병원 협력병원 및 개방병원 내과 전문의</li>
           <li>일산백병원 협력병원 내과 전문의</li>
@@ -129,18 +128,12 @@ export default function Intro() {
         </ul>
       </div>
       <style>{`
-        li {
+        .intro_list li {
           list-style: circle;
         }
 
         .li_bold {
           font-weight: bold;
-        }
-        .bluebg {
-          background-color: #1374b9;
-          border-radius: 10px;
-          color:white !important;
-          padding: 3px 10px 3px 10px;
         }
         .book_intro {
           text-align: center;
