@@ -262,7 +262,7 @@ export default function FixedNotice() {
             padding: 10px 0;
         }
 
-        .linkcontainer > * ,, .media-button-container > * {
+        .linkcontainer > * , .media-button-container > * {
             margin-bottom: 10px;
         }
 
@@ -296,7 +296,6 @@ export default function FixedNotice() {
             display:flex;
             align-items: center;
             flex-direction:column !important;
-            gap: 10px !important;
           }
       }
       `}</style>
