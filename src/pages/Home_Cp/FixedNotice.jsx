@@ -258,16 +258,19 @@ export default function FixedNotice() {
           align-items: center;
           flex-direction:column;
         }
-        .linkcontainer, .media-button-container {
-            padding: 10px 0;
-        }
 
-        .linkcontainer > * , .media-button-container > * {
+        .linkcontainer > *  {
             margin-bottom: 10px;
         }
 
-        .linkcontainer > *:last-child, .media-button-container > *:last-child {
+        .linkcontainer > *:last-child {
             margin-bottom: 0;
+        }
+        .media-button-container > *{
+          margin-right: 5px;
+        }
+        .media-button-container > *:last-child {
+          margin-right: 0px;
         }
         .linkbox {
           display:flex;
@@ -290,12 +293,20 @@ export default function FixedNotice() {
           justify-content: center !important;
 
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 280px) {
           .media-button-container  {
           
             display:flex;
             align-items: center;
             flex-direction:column !important;
+          }
+            
+          .media-button-container > *  {
+              margin-bottom: 10px;
+          }
+
+          .media-button-container > *:last-child {
+              margin-bottom: 0;
           }
       }
       `}</style>
