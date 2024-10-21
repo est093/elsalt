@@ -258,15 +258,15 @@ export default function FixedNotice() {
           align-items: center;
           flex-direction:column;
         }
-        .linkcontainer {
+        .linkcontainer, .media-button-container {
             padding: 10px 0;
         }
 
-        .linkcontainer > * {
+        .linkcontainer > * ,, .media-button-container > * {
             margin-bottom: 10px;
         }
 
-        .linkcontainer > *:last-child {
+        .linkcontainer > *:last-child, .media-button-container > *:last-child {
             margin-bottom: 0;
         }
         .linkbox {
@@ -287,7 +287,6 @@ export default function FixedNotice() {
           display:flex;
           align-items: center;
           flex-direction:row !important;
-          gap: 10px !important;
           justify-content: center !important;
 
         }
