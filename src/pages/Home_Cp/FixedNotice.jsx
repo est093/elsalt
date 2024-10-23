@@ -36,10 +36,10 @@ export default function FixedNotice() {
           matches4
             ? { width: "100%" }
             : matches2
-            ? { width: "80%" }
+            ? { width: "90%" }
             : matches
             ? { width: "100%" }
-            : { width: "60%" }
+            : { width: "70%" }
         }
       >
         <div>
@@ -71,10 +71,10 @@ export default function FixedNotice() {
           matches4
             ? { width: "100%" }
             : matches2
-            ? { width: "80%" }
+            ? { width: "90%" }
             : matches
             ? { width: "100%" }
-            : { width: "60%" }
+            : { width: "70%" }
         }
       >
         <div>
@@ -152,10 +152,10 @@ export default function FixedNotice() {
                       matches4
                         ? "100%"
                         : matches2
-                        ? "80%"
+                        ? "90%"
                         : matches
                         ? "100%"
-                        : "60%"
+                        : "70%"
                     }
                   />
                 </p>
@@ -167,10 +167,10 @@ export default function FixedNotice() {
                       matches4
                         ? "100%"
                         : matches2
-                        ? "80%"
+                        ? "90%"
                         : matches
                         ? "100%"
-                        : "60%"
+                        : "70%"
                     }
                   />
                 </p>
@@ -240,10 +240,10 @@ export default function FixedNotice() {
                       matches4
                         ? "100%"
                         : matches2
-                        ? "80%"
+                        ? "90%"
                         : matches
                         ? "100%"
-                        : "60%"
+                        : "70%"
                     }
                   />
                 </p>

@@ -1,18 +1,17 @@
 import "../../../css/fixcss.css";
+import "../../../css/etc.css";
 export default function Intro() {
   return (
     <>
       <div className="container">
-        <h4 style={{ color: "#1374b9", fontWeight: "bold" }}>원장님 인사말</h4>
+        <h4 className="general_font">원장님 인사말</h4>
         <br />
         <div className="row col-mb-50 mb-3">
-          <div className="col-lg-2">
+          <div className="col-lg-3">
             <img src="/elsalt/elsalt/1_1_1.jpg" alt="인물사진" width="100%" />
           </div>
           <div className="col-lg-6">
-            <h4 style={{ color: "#1374b9", fontWeight: "bold" }}>
-              안녕하십니까?
-            </h4>
+            <h4 className="general_font">안녕하십니까?</h4>
             하나님의 사랑과 은혜아래 항상 건강과 축복이 넘치기를 기도드립니다.{" "}
             <br />
             다년간의 임상경험과 지식을 바탕으로 최첨단 의료 설비를 갖춘 내과
@@ -25,13 +24,11 @@ export default function Intro() {
             <br />
             <p style={{ textAlign: "right" }}>원장/내과 전문의 김 우 규</p>
           </div>
-          <div className="col-lg-4"></div>
+          <div className="col-lg-3"></div>
         </div>
       </div>
       <div className="container">
-        <h4 style={{ color: "#1374b9", fontWeight: "bold" }}>
-          빛과소금내과 원장
-        </h4>
+        <h4 className="general_font">빛과소금내과 원장</h4>
         <h5 style={{ fontWeight: "bold" }}>
           내과 전문의
           <br />
@@ -66,7 +63,7 @@ export default function Intro() {
         <h5>
           <span className="bluebg">대외활동</span>
         </h5>
-        <ul style={{ padding: "5px 0px 0px 4px" }}>
+        <ul className="pad-5-0-0-4">
           <li>고양시 내과 의사회 회장(現)</li>
           <li>고양시 의사회 학술 이사(現)</li>
           <li>경기도 내과 의사회 부회장(現)</li>
@@ -80,7 +77,7 @@ export default function Intro() {
         <h5>
           <span className="bluebg">수상경력</span>
         </h5>
-        <ul style={{ padding: "5px 0px 0px 4px" }}>
+        <ul className="pad-5-0-0-4">
           <li>보령의료봉사상(2019년)</li>
           <li>고양시장 표창장(2005년, 2008년, 2015년)</li>
           <li>대한개원내과의사회 회장 공로패(2017년)</li>
@@ -109,7 +106,7 @@ export default function Intro() {
         <h5>
           <span className="bluebg">협력 병원</span>
         </h5>
-        <ul className="intro_list" style={{ padding: "5px 0px 0px 4px" }}>
+        <ul className="intro_list pad-5-0-0-4">
           <li>서울대학교병원 내과 자문의 및 협력병원 내과 전문의</li>
           <li>일산병원 협력병원 및 개방병원 내과 전문의</li>
           <li>일산백병원 협력병원 내과 전문의</li>
@@ -128,13 +125,6 @@ export default function Intro() {
         </ul>
       </div>
       <style>{`
-        .intro_list li {
-          list-style: circle;
-        }
-
-        .li_bold {
-          font-weight: bold;
-        }
         .book_intro {
           text-align: center;
           font-size: var(--bs-body-font-size);

@@ -2,16 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import path from "../../utils/path.json";
+import "../../css/etc.css";
 export default function FixTabLayout() {
   let location = useLocation();
-  let name = path[location.pathname];
+  let name = "";
+
+  let x = location.pathname.split("/");
+  if (x.length >= 3) {
+    name = path["/" + x[1]];
+  } else {
+    name = path[location.pathname];
+  }
   const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 544px)").matches
+    window.matchMedia("(max-width: 768px)").matches
   );
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 544px)") //571px
+      .matchMedia("(max-width: 768px)") //571px
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
   return (

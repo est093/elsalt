@@ -8,6 +8,7 @@ import Merit from "./pages/Tabs/1/Merit";
 import FixTabLayout from "./pages/Tabs/FixTabLayout";
 import Notice from "./pages/Tabs/1/Notice";
 import Item from "./pages/Tabs/1/Notice/Item";
+import Tab3_1 from "./pages/Tabs/3/Tab3_1";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
               <Route exact path="/merit" element={<Merit />} />
               <Route exact path="/notice" element={<Notice />} />
               <Route exact path="/notice/:id" element={<Item />} />
+
+              {/* Tab 3 */}
+
+              <Route exact path="/healthcenter_1" element={<Tab3_1 />} />
             </Route>
           </Route>
         </Routes>

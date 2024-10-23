@@ -139,7 +139,7 @@ const NavComponent = () => {
                     </a>
                     <ul className="sub-menu-container">
                       <li className="menu-item">
-                        <a className="menu-link" href="/elsalt/news">
+                        <a className="menu-link" href="/elsalt/healthcenter_1">
                           <div>일반종합검진</div>
                         </a>
                       </li>
