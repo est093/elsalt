@@ -25,10 +25,10 @@ const SliderComponent = () => {
         data-duration="1000"
         data-infinite="true"
       >
-        <div className="hero-slider-mask w-slider-mask mb-0">
-          <div className="hero-slide w-slide mb-0">
+        <div className="hero-slider-mask w-slider-mask ">
+          <div className="hero-slide w-slide">
             <div
-              className="video-big-container mb-0"
+              className="video-big-container"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -41,7 +41,7 @@ const SliderComponent = () => {
               </div>
             </div>
           </div>
-          <div className="hero-slide w-slide mb-0">
+          <div className="hero-slide w-slide">
             <img
               src={matches3 ? "/elsalt/elsalt/2.jpg" : "/elsalt/elsalt/1.jpg"}
               loading="lazy"
@@ -50,7 +50,7 @@ const SliderComponent = () => {
             />
           </div>
 
-          <div className="hero-slide w-slide mb-0">
+          <div className="hero-slide w-slide">
             <img
               src="/elsalt/elsalt/main_banner2.jpg"
               loading="lazy"
@@ -59,7 +59,7 @@ const SliderComponent = () => {
             />
           </div>
         </div>
-        <div className="left-arrow w-slider-arrow-left mb-0">
+        <div className="left-arrow w-slider-arrow-left">
           <div className="arrow-embed w-embed">
             <svg
               width="100%"
@@ -78,7 +78,7 @@ const SliderComponent = () => {
             </svg>
           </div>
         </div>
-        <div className="right-arrow w-slider-arrow-right mb-0">
+        <div className="right-arrow w-slider-arrow-right">
           <div className="arrow-embed w-embed">
             <svg
               width="100%"
@@ -95,7 +95,7 @@ const SliderComponent = () => {
             </svg>
           </div>
         </div>
-        <div className="mb-0 slide-nav w-slider-nav w-shadow w-round"></div>
+        <div className="slide-nav w-slider-nav w-shadow w-round"></div>
       </div>
       <style>{`
         .h1 {
