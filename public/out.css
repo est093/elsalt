@@ -11602,7 +11602,7 @@ figcaption {
   }
 
   .home-hero-section {
-    height: auto !important;
+    display: inline !important;
   }
 
   /* .hero-slider-wrapper {

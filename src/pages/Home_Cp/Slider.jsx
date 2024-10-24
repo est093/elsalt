@@ -11,7 +11,7 @@ const SliderComponent = () => {
       .addEventListener("change", (e) => setMatches3(e.matches));
   }, []);
   return (
-    <section className="home-hero-section">
+    <div className="home-hero-section mb-0">
       <div
         data-delay="5000"
         data-animation="cross"
@@ -25,10 +25,10 @@ const SliderComponent = () => {
         data-duration="1000"
         data-infinite="true"
       >
-        <div className="hero-slider-mask w-slider-mask">
-          <div className="hero-slide w-slide">
+        <div className="hero-slider-mask w-slider-mask mb-0">
+          <div className="hero-slide w-slide mb-0">
             <div
-              className="video-big-container"
+              className="video-big-container mb-0"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -41,16 +41,7 @@ const SliderComponent = () => {
               </div>
             </div>
           </div>
-
-          <div className="hero-slide w-slide">
-            <img
-              src="/elsalt/elsalt/main_banner2.jpg"
-              loading="lazy"
-              alt="Slider image"
-              className={matches3 ? "slider-image" : "slider-image-sm"}
-            />
-          </div>
-          <div className="hero-slide w-slide">
+          <div className="hero-slide w-slide mb-0">
             <img
               src={matches3 ? "/elsalt/elsalt/2.jpg" : "/elsalt/elsalt/1.jpg"}
               loading="lazy"
@@ -58,8 +49,17 @@ const SliderComponent = () => {
               className={matches3 ? "slider-image" : "slider-image-sm"}
             />
           </div>
+
+          <div className="hero-slide w-slide mb-0">
+            <img
+              src="/elsalt/elsalt/main_banner2.jpg"
+              loading="lazy"
+              alt="Slider image"
+              className={matches3 ? "slider-image" : "slider-image-sm"}
+            />
+          </div>
         </div>
-        <div className="left-arrow w-slider-arrow-left">
+        <div className="left-arrow w-slider-arrow-left mb-0">
           <div className="arrow-embed w-embed">
             <svg
               width="100%"
@@ -78,7 +78,7 @@ const SliderComponent = () => {
             </svg>
           </div>
         </div>
-        <div className="right-arrow w-slider-arrow-right">
+        <div className="right-arrow w-slider-arrow-right mb-0">
           <div className="arrow-embed w-embed">
             <svg
               width="100%"
@@ -95,7 +95,7 @@ const SliderComponent = () => {
             </svg>
           </div>
         </div>
-        <div className="slide-nav w-slider-nav w-shadow w-round"></div>
+        <div className="mb-0 slide-nav w-slider-nav w-shadow w-round"></div>
       </div>
       <style>{`
         .h1 {
@@ -140,7 +140,6 @@ const SliderComponent = () => {
         .video-container {
           position: relative;
           width: 100%;
-          height: 0;
           padding-bottom: 35%; /* 16:9 비율, 필요에 맞게 조정 가능 */
           overflow: hidden;
         }
@@ -165,7 +164,7 @@ const SliderComponent = () => {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 };
 
