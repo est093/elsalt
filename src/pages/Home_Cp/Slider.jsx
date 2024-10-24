@@ -1,17 +1,35 @@
 import { useEffect, useState } from "react";
 
+export function getWindowDimensions() {
+  const { innerWidth: width } = window;
+  return width;
+}
 const SliderComponent = () => {
   const [matches3, setMatches3] = useState(
     window.matchMedia("(min-width: 990px)").matches
   );
+  // Assuming aspect ratio is width / height
+  const aspectRatio = 1.642;
+  const [width, setWidth] = useState(getWindowDimensions()); // width is 100% of the window
+  const height = width / aspectRatio; // calculate height based on aspect ratio
 
+  useEffect(() => {
+    function handleResize() {
+      setWidth(getWindowDimensions());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     window
       .matchMedia("(min-width: 990px)")
       .addEventListener("change", (e) => setMatches3(e.matches));
   }, []);
   return (
-    <div className="home-hero-section mb-0">
+    <div
+      className="home-hero-section mb-0"
+      style={matches3 ? {} : { height: height }}
+    >
       <div
         data-delay="5000"
         data-animation="cross"

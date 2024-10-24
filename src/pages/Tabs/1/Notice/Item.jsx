@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
 import { posts } from "../../../../utils/notice_data.json";
 import { useParams } from "react-router-dom";
+
 export default function Item() {
   const { id } = useParams();
   const post = posts.filter((post) => post.id === parseInt(id, 10))[0];
-  // console.log(post);
   return (
     <div className="inner sub_inner">
       <div className="notice_wrap">
@@ -36,17 +35,13 @@ export default function Item() {
                 {post.imgs &&
                   post.imgs.map((img, i) => (
                     <p key={"res_img" + i}>
-                      <span>
-                        <iframe
-                          src={img[0]}
-                          alt="res_img"
-                          style={{
-                            aspectRatio: img[1],
-                            height: "auto",
-                            width: "100%",
-                          }}
-                        ></iframe>
-                      </span>
+                      <img
+                        src={img[0]}
+                        alt="res_img"
+                        style={{
+                          width: "100%",
+                        }}
+                      />
                     </p>
                   ))}
                 {post.text && post.text.map((text, i) => <p key={i}>{text}</p>)}
