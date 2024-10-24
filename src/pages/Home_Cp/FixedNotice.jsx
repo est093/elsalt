@@ -104,10 +104,10 @@ export default function FixedNotice() {
   };
 
   return (
-    <section id="content" style={{ padding: "0px 0px 0px 10px" }}>
-      <div className="content-wrap">
+    <div style={{ padding: "0px 0px 0px 10px" }}>
+      <div>
         <div className="container">
-          <div className="row align-items-center">
+          <div className="align-items-center">
             <div className="col-lg-12">
               <div className="heading-block" style={{ marginTop: "20px" }}>
                 <h1>
@@ -310,6 +310,6 @@ export default function FixedNotice() {
           }
       }
       `}</style>
-    </section>
+    </div>
   );
 }

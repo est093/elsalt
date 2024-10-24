@@ -1,36 +1,17 @@
 import { useEffect, useState } from "react";
 
 const SliderComponent = () => {
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 355px)").matches
-  );
-
-  const [matches2, setMatches2] = useState(
-    window.matchMedia("(max-width: 1000px)").matches
-  );
   const [matches3, setMatches3] = useState(
     window.matchMedia("(min-width: 990px)").matches
-  );
-  const [matches4, setMatches4] = useState(
-    window.matchMedia("(min-width: 840px)").matches
   );
 
   useEffect(() => {
     window
-      .matchMedia("(min-width: 571px)") //571px
-      .addEventListener("change", (e) => setMatches(e.matches));
-    window
-      .matchMedia("(max-width: 1000px)")
-      .addEventListener("change", (e) => setMatches2(e.matches));
-    window
       .matchMedia("(min-width: 990px)")
       .addEventListener("change", (e) => setMatches3(e.matches));
-    window
-      .matchMedia("(min-width: 840px)")
-      .addEventListener("change", (e) => setMatches4(e.matches));
   }, []);
   return (
-    <section className="home-hero-section wf-section">
+    <section className="home-hero-section">
       <div
         data-delay="5000"
         data-animation="cross"
@@ -181,14 +162,6 @@ const SliderComponent = () => {
           .video-big-container {
             height: 100%;
             margin-bottom: -100px;
-          }
-        }
-        @media screen and (max-width: 590px) {
-          .hero-slider-mask {
-            height: 70%;
-          }
-          .main-container {
-            padding: 5px;
           }
         }
       `}</style>
