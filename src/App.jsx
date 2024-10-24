@@ -9,6 +9,7 @@ import FixTabLayout from "./pages/Tabs/FixTabLayout";
 import Notice from "./pages/Tabs/1/Notice";
 import Item from "./pages/Tabs/1/Notice/Item";
 import Tab3_1 from "./pages/Tabs/3/Tab3_1";
+import Tab3_2 from "./pages/Tabs/3/Tab3_2";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               {/* Tab 3 */}
 
               <Route exact path="/healthcenter_1" element={<Tab3_1 />} />
+              <Route exact path="/healthcenter_2" element={<Tab3_2 />} />
             </Route>
           </Route>
         </Routes>

@@ -1,4 +1,3 @@
-import React from "react";
 import "../../../css/etc.css";
 import "../../../css/carousel.css";
 export default function Tab3_1() {

@@ -144,7 +144,7 @@ const NavComponent = () => {
                         </a>
                       </li>
                       <li className="menu-item">
-                        <a className="menu-link" href="/elsalt/calendar">
+                        <a className="menu-link" href="/elsalt/healthcenter_2">
                           <div>국민건강보험공단종합검진</div>
                         </a>
                       </li>
