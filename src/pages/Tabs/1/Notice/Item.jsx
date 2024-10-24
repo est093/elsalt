@@ -40,7 +40,11 @@ export default function Item() {
                         <iframe
                           src={img[0]}
                           alt="res_img"
-                          style={{ aspectRatio: img[1] }}
+                          style={{
+                            aspectRatio: img[1],
+                            height: "auto",
+                            width: "100%",
+                          }}
                         ></iframe>
                       </span>
                     </p>
